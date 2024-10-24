@@ -1,9 +1,15 @@
 players()
 
 function players() {
-    let numPlayers = prompt("Quantos jogadores serão? (OBS: Digite um valor entre 2 e 10");
-    let playersName = [];
+    let numPlayers;
+
+    do {
+        numPlayers = prompt("Quantos jogadores serão? (OBS: Digite um valor entre 2 e 10)");
+        if (numPlayers == null) { return }
+    } while (isNaN(numPlayers) || numPlayers < 2 || numPlayers > 10);
     
+    let playersName = [];
+
     for (let i = 0; i < numPlayers; i++) {
         playersName.push(prompt(`Digite o nome do ${i + 1}º jogador`))
     }
@@ -19,10 +25,10 @@ function createTable(playersName) {
         game.innerHTML += `
         <div class="player">
             <div class="player-title">
-            <span class="player-name">${playersName[i]}</span>
-            <div class="player-wins" data-wins="0">
-                <!-- Troféus serão adicionados aqui -->
-            </div>
+                <span class="player-name">${playersName[i]}</span>
+                <div class="player-wins" data-wins="0">
+                    <!-- Troféus serão adicionados aqui -->
+                </div>
             </div>
             <div class="lifes">
                 <div class="life" onclick="toogleLife(this)"> 
@@ -114,7 +120,6 @@ function checkWinner() {
         updateWins(winner);
 
         document.querySelector('.restart-btn').style.display = 'block';
-
     }
 }
 
@@ -157,4 +162,3 @@ function resetGame() {
     // Esconde o botão de reiniciar
     document.querySelector('.restart-btn').style.display = 'none';
 }
-
