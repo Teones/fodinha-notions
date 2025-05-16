@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-
-    <title>Fodinha</title>
-</head>
-<body>
-    <div class="screen">
-        <h1>FODINHA</h1>
-        <div class="game"></div>
-        <button class="restart-btn" onclick="resetGame()">Jogar Novamente?</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fodinha - O Jogo</title>
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/game.css" />
+    <!-- Adicionar Ion Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="main-menu">
+      <!-- Conteúdo do menu principal (gerado por JS) -->
     </div>
 
-
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <script src="JavaScript/script.js"></script>
-</body>
+    <div class="game-screen" style="display: none">
+      <!-- Conteúdo da tela do jogo (gerado por JS) -->
+    </div>
+    <script type="module" src="JavaScript/script.js"></script>
+  </body>
 </html>

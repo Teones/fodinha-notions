@@ -1,0 +1,149 @@
+/* CSS/game.css */
+.screen {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Adicionado para melhor controle do padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-header {
+  margin-bottom: 1.5rem; /* Reduzido um pouco */
+  text-align: center;
+  font-size: 1.1rem; /* Ajustado */
+}
+
+.game-header .turn-info {
+  font-size: 1.4rem; /* Aumentado para destaque */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.game-header .cards-info {
+  font-size: 1rem;
+  color: #bdc3c7;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(220px, 1fr)
+  ); /* Aumentado minmax */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%; /* Para ocupar a largura disponível */
+}
+
+.player {
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  padding: 1rem 1rem 0rem 1rem;
+  text-align: center;
+  position: relative;
+  transition: opacity 0.3s, background-color 0.3s; /* Adicionada transição */
+}
+
+.player.dead {
+  opacity: 0.5; /* Mais sutil */
+  background-color: #202224a9; /* Um pouco mais escuro que o normal, mas não tão cinza */
+}
+
+.player-header {
+  display: flex;
+  flex-direction: column; /* Para empilhar nome e marcadores */
+  align-items: center;
+  gap: 0.3rem; /* Reduzido */
+  margin-bottom: 0.8rem; /* Reduzido */
+}
+
+.player-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.player-markers {
+  font-size: 0.8rem;
+  color: #f1c40f;
+  min-height: 1.2em; /* Para evitar pulos de layout */
+}
+.player-markers span {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.player-lives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem; /* Espaçamento entre corações */
+  margin: 1rem 0;
+  min-height: 30px; /* Mantido */
+}
+
+.heart-icon {
+  font-size: 1.8rem; /* Tamanho dos ícones de coração */
+  transition: color 0.2s, transform 0.2s;
+}
+
+.heart-icon.clickable {
+  cursor: pointer;
+}
+.heart-icon.clickable:hover {
+  transform: scale(1.15);
+}
+
+.heart-full {
+  color: #e74c3c; /* Vermelho para coração cheio */
+}
+
+.heart-temp-lost {
+  color: #e74c3c; /* Vermelho para contorno (ainda é uma vida "ativa") */
+}
+
+.heart-perm-lost {
+  color: #7f8c8d; /* Cinza/opaco para vida permanentemente perdida */
+  opacity: 0.6;
+}
+
+/* Botão "Perder Vida" será removido, a interação será nos corações */
+/* .lose-life-btn { ... } */
+
+.next-round-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem; /* Ajustado */
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s; /* Adicionada transição */
+}
+
+.next-round-btn:hover {
+  background-color: #2980b9;
+}
+
+.finish-btn {
+  /* Estilo para o botão de finalizar partida, caso não tenha no styles.css global */
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+.finish-btn:hover {
+  background-color: #a93226;
+}
